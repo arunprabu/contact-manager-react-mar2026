@@ -13,3 +13,6 @@ FAKE REST API: https://fakestoreapi.com/products
 3.  Product Details
 4.  Update Product
 5.  Delete Product
+
+====
+error boundary

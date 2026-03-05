@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "react-error-boundary";
 import TeamMember from "./components/TeamMember";
 
 const AboutPage = () => {
@@ -24,8 +25,13 @@ const AboutPage = () => {
       <input type="text" value={heading} readOnly className="border p-2" />
       <hr />
       <h2 className="text-2xl font-semibold mt-5">Props | Demo</h2>
-      <TeamMember {...teamMembers[0]}></TeamMember>
-      <TeamMember {...teamMembers[1]} />
+
+      <ErrorBoundary
+        fallback={<div className="bg-red-200 p-4">Something went wrong</div>}
+      >
+        <TeamMember {...teamMembers[0]}></TeamMember>
+        <TeamMember {...teamMembers[1]} />
+      </ErrorBoundary>
 
       <hr />
       <h2 className="text-2xl font-semibold mt-5">
